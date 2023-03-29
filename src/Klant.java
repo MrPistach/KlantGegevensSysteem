@@ -3,6 +3,14 @@ public class Klant {
     private String email;
     private int telefoonnummer;
 
+    private String telefoon;
+
+    public Klant(String naam, String email, int telefoonnummer, String telefoon) {
+        this.naam = naam;
+        this.email = email;
+        this.telefoonnummer = telefoonnummer;
+        this.telefoon = telefoon;
+    }
     public String getNaam() {
         return naam;
     }
@@ -25,5 +33,13 @@ public class Klant {
 
     public void setTelefoonnummer(int telefoonnummer) {
         this.telefoonnummer = telefoonnummer;
+    }
+
+    public String getTelefoon() {
+        return telefoon;
+    }
+
+    public void setTelefoon(String telefoon) {
+        this.telefoon = telefoon;
     }
 }
