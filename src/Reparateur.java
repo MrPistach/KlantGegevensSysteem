@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-
 public class Reparateur {
     private String name;
     private int yearsOfExperience;
@@ -49,4 +48,5 @@ public class Reparateur {
         System.out.println("Naam: " + name);
         System.out.println("Ervaring: " + yearsOfExperience);
     }
+
 }

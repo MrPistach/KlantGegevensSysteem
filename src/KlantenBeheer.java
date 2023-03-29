@@ -2,20 +2,22 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+
+
 public class KlantenBeheer {
     private Scanner scanner = new Scanner(System.in);
-    private ArrayList<Klant> klantenlijst = new ArrayList<>();
+    ArrayList<Klant> klantenlijst = new ArrayList<>();
 
     public void verwijderKlant() {
         Klant teVerwijderenKlant = getKlant();
-        if(klantenlijst.contains(teVerwijderenKlant)) {
+        if (klantenlijst.contains(teVerwijderenKlant)) {
             klantenlijst.remove(teVerwijderenKlant);
             System.out.println("Klant " + teVerwijderenKlant.getNaam() + " is succesvol verwijderd.");
-        }
-        else {
+        } else {
             System.out.println("Klant " + teVerwijderenKlant.getNaam() + " bestaat niet in het systeem.");
         }
     }
+
     public Klant getKlant() {
         Klant klant = null;
         boolean match = false;
@@ -47,9 +49,7 @@ public class KlantenBeheer {
                     klant = matches.get(index - 1);
                     System.out.println("Het is gelukt om de klant te vinden.");
                     break;
-                }
-
-                else {
+                } else {
                     System.out.println("Er is geen klant met dit telefoonnummer gevonden.");
                     break;
                 }
@@ -57,6 +57,7 @@ public class KlantenBeheer {
         }
         return klant;
     }
+
     public void bewerkKlantgegevens(Klant klant) {
         boolean klaar = false;
         if (klant == null) {
@@ -75,15 +76,15 @@ public class KlantenBeheer {
                 case "naam" -> {
                     System.out.println("Wat is de nieuwe naam van de klant?");
                     String nieuweNaam = scanner.nextLine();
-                        klant.setNaam(nieuweNaam);
-                        klaar = true;
-                    }
+                    klant.setNaam(nieuweNaam);
+                    klaar = true;
+                }
                 case "email" -> {
                     System.out.println("Wat is het nieuwe e-mailadres van de klant?");
                     String nieuweEmail = scanner.nextLine();
-                        klant.setEmail(nieuweEmail);
-                        klaar = true;
-                    }
+                    klant.setEmail(nieuweEmail);
+                    klaar = true;
+                }
                 case "telefoonnummer" -> {
                     System.out.println("Wat is de nieuwe telefoonnummer van de klant?");
                     int nieuweTelefoonnummer = scanner.nextInt();
@@ -99,8 +100,7 @@ public class KlantenBeheer {
                     String input2 = scanner.nextLine();
                     if (input2.equals("1")) {
                         klaar = false;
-                    }
-                    else {
+                    } else {
                         klaar = true;
                     }
                 }

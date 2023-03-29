@@ -13,24 +13,26 @@ public class Vragen {
             System.out.println("Welkom bij de klantenbeheer applicatie.");
             System.out.println("Kies een optie:");
             System.out.println("1. Nieuwe klant registreren");
-            System.out.println("2. Bestaande klant verwijderen");
-            System.out.println("3. Bestaande klant wijzigen");
-            System.out.println("4. Bestaande klant zoeken");
-            System.out.println("5. Status reparatie wijzigen");
-            System.out.println("6. Klant tonen");
-            System.out.println("7. Reparateur tonen");
-            System.out.println("8. Reparatie tonen");
-            System.out.println("9. Stoppen");
+            System.out.println("2. Nieuwe reparateur registreren");
+            System.out.println("3. Bestaande klant verwijderen");
+            System.out.println("4. Bestaande klant wijzigen");
+            System.out.println("5. Bestaande klant zoeken");
+            System.out.println("6. Status reparatie wijzigen");
+            System.out.println("7. Klant tonen");
+            System.out.println("8. Reparateur tonen");
+            System.out.println("9. Reparatie tonen");
+            System.out.println("10. Stoppen");
 
             int keuze = scanner.nextInt();
             scanner.nextLine();
 
             switch (keuze) {
                 case 1 -> registratie.nieuweKlantRegistreren();
-                case 2 -> klantenBeheer.verwijderKlant();
-                case 3 -> klantenBeheer.bewerkKlantgegevens(klantenBeheer.getKlant());
-                case 4 -> klantenBeheer.getKlant();
-                case 5 -> {
+                case 2 -> registratie.nieuweReparateur();
+                case 3 -> klantenBeheer.verwijderKlant();
+                case 4 -> klantenBeheer.bewerkKlantgegevens(klantenBeheer.getKlant());
+                case 5 -> klantenBeheer.getKlant();
+                case 6 -> {
                     System.out.println("Voer het reparatienummer in:");
                     int reparatieNummer = scanner.nextInt();
                     scanner.nextLine();
@@ -42,10 +44,10 @@ public class Vragen {
                       System.out.println("Status van de reparatie is gewijzigd.");
                     }
                 }
-                case 6 -> klant.printKlant();
-                case 7 -> reparateur.printReparateur();
-                case 8 -> reparatie.printReparatie();
-                case 9 -> doorgaan = false;
+                case 7 -> klant.printKlant();
+                case 8 -> reparateur.printReparateur();
+                case 9 -> reparatie.printReparatie();
+                case 10 -> doorgaan = false;
                 default -> System.out.println("Ongeldige keuze, probeer opnieuw.");
             }
         }
