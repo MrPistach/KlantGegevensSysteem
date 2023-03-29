@@ -2,15 +2,19 @@ public class Klant {
     private String naam;
     private String email;
     private int telefoonnummer;
+    private String telefoonmodel;
 
-    private String telefoon;
-
-    public Klant(String naam, String email, int telefoonnummer, String telefoon) {
+    public Klant(String naam, String email, int telefoonnummer, String telefoonmodel) {
         this.naam = naam;
         this.email = email;
         this.telefoonnummer = telefoonnummer;
-        this.telefoon = telefoon;
+        this.telefoonmodel = telefoonmodel;
     }
+
+    public Klant() {
+
+    }
+
     public String getNaam() {
         return naam;
     }
@@ -35,11 +39,18 @@ public class Klant {
         this.telefoonnummer = telefoonnummer;
     }
 
-    public String getTelefoon() {
-        return telefoon;
+    public String getTelefoonModel() {
+        return telefoonmodel;
     }
 
-    public void setTelefoon(String telefoon) {
-        this.telefoon = telefoon;
+    public void setTelefoonModel(String telefoonmodel) {
+        this.telefoonmodel = telefoonmodel;
+    }
+
+    public void printKlant() {
+        System.out.println("Naam: " + naam);
+        System.out.println("Email: " + email);
+        System.out.println("Telefoonnummer: " + telefoonnummer);
+        System.out.println("Telefoonmodel: " + telefoonmodel);
     }
 }

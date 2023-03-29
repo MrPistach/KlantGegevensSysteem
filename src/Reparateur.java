@@ -7,6 +7,9 @@ public class Reparateur {
 
     private ArrayList<Klant> toegewezenReparaties = new ArrayList<>();
 
+    public Reparateur() {
+    }
+
     public Reparateur(String name, int yearsOfExperience) {
         this.name = name;
         this.yearsOfExperience = yearsOfExperience;
@@ -40,5 +43,10 @@ public class Reparateur {
             }
         }
         return null;
+    }
+
+    public void printReparateur() {
+        System.out.println("Naam: " + name);
+        System.out.println("Ervaring: " + yearsOfExperience);
     }
 }

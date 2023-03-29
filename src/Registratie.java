@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -41,6 +42,10 @@ public class Registratie {
         Klant klant = new Klant(naam, email, telefoonnummer, model);
         klantenlijst.add(klant);
 
+        Reparatie reparatie = new Reparatie(klant, new Date(), "nog niet begonnen", "");
+        reparatie.zetOmschrijving(reparatie);
+
+
         Reparateur reparateur = Reparateur.geefBeschikbareReparateur(reparateurs);
         if (reparateur != null) {
             reparateur.toewijzenReparatie(klant);
@@ -60,5 +65,6 @@ public class Registratie {
             System.out.println("Er zijn momenteel geen beschikbare reparateurs.");
         }
     }
+
 }
 
