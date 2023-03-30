@@ -21,7 +21,6 @@ public class KlantenBeheer {
     public Klant getKlant() {
         Klant klant = null;
         boolean match = false;
-        List<Klant> matches = new ArrayList<>();
 
         while (!match) {
             System.out.println("Geef de naam van de klant:");
@@ -29,34 +28,31 @@ public class KlantenBeheer {
 
             for (Klant x : klantenlijst) {
                 if ((x.getNaam()).equals(input)) {
-                    matches.add(x);
+                    klant = x;
+                    match = true;
+                    break;
                 }
             }
 
-            if (matches.isEmpty()) {
-                System.out.println("Er is geen klant met de naam " + input + " in ons systeem gevonden.");
-                break;
-            } else if (matches.size() == 1) {
-                klant = matches.get(0);
-                System.out.println("Het is gelukt om de klant te vinden.");
-                break;
-            } else {
-                System.out.println("Er zijn meerdere klanten gevonden met deze naam.");
-                System.out.println("Geef het telefoonnummer van de gewenste klant:");
-                int index = scanner.nextInt();
-
-                if (index > 0 && index <= matches.size()) {
-                    klant = matches.get(index - 1);
-                    System.out.println("Het is gelukt om de klant te vinden.");
+            if (!match) {
+                System.out.println("Deze klant staat niet in ons systeem.");
+                System.out.println("Wilt u nog een keer proberen de naam in te voeren?");
+                System.out.println("1. Ja");
+                System.out.println("2. Nee");
+                String input = scanner.nextLine();
+                if (input.equals("2")) {
+                    System.out.println("Het is niet gelukt om de klant te vinden.");
                     break;
+                } else if (input.equals("1")) {
+                    continue;
                 } else {
-                    System.out.println("Er is geen klant met dit telefoonnummer gevonden.");
-                    break;
+                    System.out.println("Ongeldige invoer. Probeer opnieuw.");
                 }
             }
         }
         return klant;
     }
+
 
     public void bewerkKlantgegevens(Klant klant) {
         boolean klaar = false;
