@@ -39,11 +39,11 @@ public class KlantenBeheer {
                 System.out.println("Wilt u nog een keer proberen de naam in te voeren?");
                 System.out.println("1. Ja");
                 System.out.println("2. Nee");
-                String input = scanner.nextLine();
-                if (input.equals("2")) {
+                String input2 = scanner.nextLine();
+                if (input2.equals("2")) {
                     System.out.println("Het is niet gelukt om de klant te vinden.");
                     break;
-                } else if (input.equals("1")) {
+                } else if (input2.equals("1")) {
                     continue;
                 } else {
                     System.out.println("Ongeldige invoer. Probeer opnieuw.");
